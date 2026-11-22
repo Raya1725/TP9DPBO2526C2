@@ -21,6 +21,12 @@ class PresenterLowongan implements KontrakPresenterLowongan
         $nama = htmlspecialchars($lowongan->getNama());
         $asalPerusahaan = htmlspecialchars($lowongan->getAsalPerusahaan());
         $minimalSkorTes = number_format($lowongan->getMinimalSkorTes()) . '/100';
+
+        return "<tr>
+            <td class= 'col-id'>{$no}</td>
+            <td><strong>{$id}</strong></td>
+            <td>{$nama}</td>
+        ";
     }
     public function tampilkanLowongan(): string
     {
