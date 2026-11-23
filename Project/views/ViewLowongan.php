@@ -29,10 +29,10 @@ class ViewLowongan implements KontrakView
         $tokens = [
             '{{FORM_TITLE}}' => htmlspecialchars($title),
             '{{ACTION}}' => htmlspecialchars($action),
-            '{{ID}}' => htmlspecialchars($formData['id' ?? '']),
+            '{{ID}}' => htmlspecialchars($formData['id'] ?? ''),
             '{{NAMA}}' => htmlspecialchars($formData['nama'] ?? ''),
             '{{ASALPERUSAHAAN}}' => htmlspecialchars($formData['asalPerusahaan'] ?? ''),
-            '{{MINIMALSKORTES}}' => htmlspecialchars((string) $formData['minimalSkorTes'] ?? 0),
+            '{{MINIMALSKORTES}}' => htmlspecialchars((string) ($formData['minimalSkorTes'] ?? 0)),
         ];
         return str_replace(array_keys($tokens), array_values($tokens), $template);
     }
