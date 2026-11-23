@@ -107,28 +107,31 @@
     <div class="card">
       <h1>{{FORM_TITLE}}</h1>
 
-      <form method="post" action="index.php">
+      <form method="post" action="index.php?page=lowongan">
         <input type="hidden" name="action" value="{{ACTION}}">
-        <input type="hidden" name="id" value="{{ID}}">
-
+        <div>
+          <label for="id">id</label>
+          <input id="id" name="id" type="text" placeholder="id lowongan" value="{{ID}}" required>
+        </div>
         <div>
           <label for="nama">Nama Lowongan</label>
           <input id="nama" name="nama" type="text" placeholder="Nama lowongan" value="{{NAMA}}" required>
         </div>
 
         <div>
-          <label for="posisi">asal perusahaan</label>
-          <input id="posisi" name="posisi" type="text" placeholder="nama perusahaan" value="{{ASALPERUSAHAAN}}"
-            required>
+          <label for="asalPerusahaan">asal perusahaan</label>
+          <input id="asalPerusahaan" name="asalPerusahaan" type="text" placeholder="nama perusahaan"
+            value="{{ASALPERUSAHAAN}}" required>
         </div>
 
         <div>
-          <label for="skorTes">Skor Tes (0-100)</label>
-          <input id="skorTes" name="skorTes" type="number" min="0" max="100" step="1" value="{{SKORMINMALTES}}">
+          <label for="minimalSkorTes">Skor Tes (0-100)</label>
+          <input id="minimalSkorTes" name="minimalSkorTes" type="number" min="0" max="100" step="1"
+            value="{{MINIMALSKORTES}}">
         </div>
 
         <div class="full actions">
-          <a href="index.php" class="btn btn-muted">Batal</a>
+          <a href="index.php?page=lowongan" class="btn btn-muted">Batal</a>
           <button type="submit" class="btn btn-primary">Simpan</button>
         </div>
       </form>

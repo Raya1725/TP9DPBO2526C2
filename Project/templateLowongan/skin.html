@@ -109,6 +109,12 @@
       font-weight: 600;
     }
 
+    .nav-link {
+      background: var(--accent);
+      color: #fff;
+      font-weight: 600;
+    }
+
     .footer-bar {
       margin-top: 16px;
       display: flex;
@@ -127,6 +133,7 @@
 <body>
   <div class="container">
     <div class="card">
+      <a class="btn nav-link" href="index.php?page=kandidat">Kandidat</a>
       <h1>Daftar lowongan</h1>
 
       <div style="overflow:auto;">
@@ -149,10 +156,10 @@
 
       <div class="footer-bar">
         <div style="color:var(--muted);font-size:13px">
-          Total Kandidat: <strong style="color:#0f172a">{{TOTAL_DATA}}</strong>
+          Total Lowongan: <strong style="color:#0f172a">{{TOTAL_DATA}}</strong>
         </div>
         <div>
-          <a href="index.php?screen=add" class="btn btn-add">+ Tambah Kandidat</a>
+          <a href="index.php?screen=add&page=lowongan" class="btn btn-add">+ Tambah Kandidat</a>
         </div>
       </div>
     </div>

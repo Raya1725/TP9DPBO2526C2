@@ -5,15 +5,15 @@ class Lowongan
 
     private string $id;
     private string $nama;
-    private string $asal_perusahaan;
-    private int $minimal_skor_tes;
+    private string $asalPerusahaan;
+    private int $minimalSkorTes;
 
-    public function __construct($id, $nama, $asal_perusahaan, $minimal_skor_tes)
+    public function __construct($id, $nama, $asalPerusahaan, $minimalSkorTes)
     {
         $this->id = $id;
         $this->nama = $nama;
-        $this->asal_perusahaan = $asal_perusahaan;
-        $this->minimal_skor_tes = $minimal_skor_tes;
+        $this->asalPerusahaan = $asalPerusahaan;
+        $this->minimalSkorTes = $minimalSkorTes;
     }
 
     public function getId(): string
@@ -38,21 +38,21 @@ class Lowongan
 
     public function getAsalPerusahaan(): string
     {
-        return $this->asal_perusahaan;
+        return $this->asalPerusahaan;
     }
 
-    public function setAsalPerusahaan($asal_perusahaan): void
+    public function setAsalPerusahaan($asalPerusahaan): void
     {
-        $this->asal_perusahaan = $asal_perusahaan;
+        $this->asalPerusahaan = $asalPerusahaan;
     }
 
     public function getMinimalSkorTes(): int
     {
-        return $this->minimal_skor_tes;
+        return $this->minimalSkorTes;
     }
 
-    public function setMinimalSkorTes($minimal_skor_tes): void
+    public function setMinimalSkorTes($minimalSkorTes): void
     {
-        $this->$minimal_skor_tes = $minimal_skor_tes;
+        $this->$minimalSkorTes = $minimalSkorTes;
     }
 }

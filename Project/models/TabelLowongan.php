@@ -2,29 +2,28 @@
 require_once __DIR__ . '/DB.php';
 require_once __DIR__ . '/KontrakModelLowongan.php';
 require_once __DIR__ . '/Lowongan.php';
-
 class TabelLowongan extends DB implements KontrakModelLowongan
 {
 
     public function __construct()
     {
-        require "/home/raya1725/Project/College/Semester3/DPBO/Prakday9/TP9DPBO2526C2" . '/config.php';
+        require __DIR__ . '/../config.php';
         parent::__construct($host, $db_name, $username, $password);
     }
 
     private function mapRowToLowongan(array $row): Lowongan
     {
         return new Lowongan(
-            (int) $row['id'],
+            $row['id'],
             $row['nama'],
-            $row['asal_perusahaan'],
+            $row['asalPerusahaan'],
             (int) $row['minimalSkorTes']
         );
     }
 
     public function getAllLowongan(): array
     {
-        $query = "SELECT * FROM lowongan ORDER BY skorTes DESC, id ASC";
+        $query = "SELECT * FROM lowongan ORDER BY minimalSkorTes DESC";
         $this->executeQuery($query);
         $rows = $this->getAllResult();
         $list = [];

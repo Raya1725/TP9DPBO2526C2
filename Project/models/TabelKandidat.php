@@ -9,7 +9,7 @@ class TabelKandidat extends DB implements KontrakModelKandidat
     public function __construct()
     {
         // require (bukan require_once) agar variabel config terisi di setiap objek baru
-        require "/home/raya1725/Project/College/Semester3/DPBO/Prakday9/TP9DPBO2526C2" . '/config.php';
+        require __DIR__ . '/../config.php';
         parent::__construct($host, $db_name, $username, $password);
     }
 

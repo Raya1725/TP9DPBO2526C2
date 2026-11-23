@@ -1,6 +1,6 @@
 <?php
 require_once __DIR__ . '/KontrakPresenterKandidat.php';
-require_once __DIR__ . '/../models/KontrakModel.php';
+require_once __DIR__ . '/../models/KontrakModelKandidat.php';
 require_once __DIR__ . '/../views/KontrakView.php';
 
 class PresenterKandidat implements KontrakPresenterKandidat
@@ -35,7 +35,7 @@ class PresenterKandidat implements KontrakPresenterKandidat
             <td>{$skorTes}</td>
             <td>{$pengalaman}</td>
             <td class='col-actions'>
-                <a href='index.php?screen=edit&id={$id}' class='btn btn-edit'>Edit</a>
+                <a href='index.php?screen=edit&id={$id}&page=kandidat' class='btn btn-edit'>Edit</a>
                 <form method='post' action='index.php' style='display:inline;' onsubmit=\"return confirm('Hapus kandidat ini?')\">
                     <input type='hidden' name='action' value='hapus'>
                     <input type='hidden' name='id' value='{$id}'>
@@ -69,7 +69,7 @@ kandidat.</td></tr>';
         if ($id !== null) {
             $kandidat = $this->model->getKandidatById($id);
             if ($kandidat === null) {
-                header("Location: index.php");
+                header("Location: index.php?page=kandidat");
                 exit();
             }
             $formData = [
@@ -89,7 +89,7 @@ kandidat.</td></tr>';
     {
         // TODO: Panggil $this->model->addKandidat(...) lalu redirect ke index.php
         $this->model->addKandidat($nama, $posisi, $domisili, $skorTes, $pengalamanTahun);
-        header('Location: index.php');
+        header('Location: index.php?page=kandidat');
         exit;
     }
 
@@ -97,7 +97,7 @@ kandidat.</td></tr>';
     {
         // TODO: Panggil $this->model->updateKandidat(...) lalu redirect ke index.php
         $this->model->updateKandidat($id, $nama, $posisi, $domisili, $skorTes, $pengalamanTahun);
-        header('Location: index.php');
+        header('Location: index.php?page=kandidat');
         exit;
     }
 
@@ -105,7 +105,7 @@ kandidat.</td></tr>';
     {
         // TODO: Panggil $this->model->deleteKandidat($id) lalu redirect ke index.php
         $this->model->deleteKandidat($id);
-        header('Location: index.php');
+        header('Location: index.php?page=kandidat');
         exit;
     }
 }
