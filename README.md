@@ -266,3 +266,5 @@ Menghubungkan Model dan View.
 # DOKUMENTASI
 
 Dokumentasi berupa screen record yang mencoba CRUD pada halaman kandidat dan lowongan. Video disimpan di folder `Dokumentasi` dengan nama file `Dokumentasi TP9.webm`.
+
+https://github.com/user-attachments/assets/261a82e9-726e-402b-b7fa-9c2f5e3db192
