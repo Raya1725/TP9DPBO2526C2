@@ -109,9 +109,9 @@
 
       <form method="post" action="index.php?page=lowongan">
         <input type="hidden" name="action" value="{{ACTION}}">
-        <div>
+        <div {{IDHIDDEN}}>
           <label for="id">id</label>
-          <input id="id" name="id" type="text" placeholder="id lowongan" value="{{ID}}" required>
+          <input id="id" name="id" type="text" placeholder="id lowongan" value="{{ID}}">
         </div>
         <div>
           <label for="nama">Nama Lowongan</label>
@@ -127,7 +127,7 @@
         <div>
           <label for="minimalSkorTes">Skor Tes (0-100)</label>
           <input id="minimalSkorTes" name="minimalSkorTes" type="number" min="0" max="100" step="1"
-            value="{{MINIMALSKORTES}}">
+            value="{{MINIMALSKORTES}}" required>
         </div>
 
         <div class="full actions">
